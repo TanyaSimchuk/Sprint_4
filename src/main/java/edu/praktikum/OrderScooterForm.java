@@ -15,6 +15,8 @@ public class OrderScooterForm {
     private By inputPhoneNumberField = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
     private By buttonNext = By.xpath(".//button[text()='Далее']");
 
+    private By scooterBlockVisible = By.xpath(".//div[@class='Order_Header__BZXOb']");
+
 
     public OrderScooterForm (WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -48,6 +50,10 @@ public class OrderScooterForm {
     public OrderScooterForm clickButtonNext() {
         webDriver.findElement(buttonNext).click();
         return this;
+    }
+
+    public boolean checkScooterBlockIsVisible() {
+        return webDriver.findElements(scooterBlockVisible).size() > 0;
     }
 
 }

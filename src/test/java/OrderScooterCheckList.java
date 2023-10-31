@@ -50,8 +50,8 @@ public class OrderScooterCheckList {
         MainPage mainPage = new MainPage(webDriver);
 
         mainPage.open()
-                .clickOrderButton()
-                .orderScooterForm().inputName(userName)
+                .orderButtons().clickOrderButton();
+        mainPage.orderScooterForm().inputName(userName)
                 .inputSurname(userSurname)
                 .inputAdress(userAdress)
                 .inputMetroStation(metroStation)
